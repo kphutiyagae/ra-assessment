@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from './components/Box';
 import CustomButton from './components/clear_button/CustomButton';
 import Fab from '@mui/material/Fab';
-import Delete from "@mui/icons-material/Delete";
+import NodeComponent from './components/node_component/NodeComponent';
 
 const containerStyles: React.CSSProperties = {
   display: 'flex',
@@ -23,7 +23,10 @@ const boxStyles: React.CSSProperties = {
 export const App = () => {
   return (
     <div style={containerStyles}>
-      <Box style={boxStyles}></Box>
+      <NodeComponent 
+      onClick={ () => console.log("Node clicked!")}
+      onHold={ () => console.log("Node pressed and held!")}
+      />
 
       <CustomButton 
       radius="8px"
