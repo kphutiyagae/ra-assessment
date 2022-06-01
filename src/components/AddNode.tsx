@@ -11,7 +11,7 @@ export default function AddNodeForm({
   addNodeItem: any;
   nodes: any;
   setNodes: any;
-}) {
+})  : JSX.Element {
   const [label, setLabel] = useState("");
 
   const [shape, setShape] = useState("");
@@ -33,7 +33,9 @@ export default function AddNodeForm({
     setAddNodeItem(!addNodeItem);
   };
 
-  <div className="addNodeform">
+  return <>{
+  
+    <div className="addNodeform">
     <form>
       <input
         type="text"
@@ -67,5 +69,6 @@ export default function AddNodeForm({
 
       <button type="submit">Add</button>
     </form>
-  </div>;
+  </div>
+  }</>
 }

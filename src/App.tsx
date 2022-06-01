@@ -4,6 +4,7 @@ import CustomButton from "./components/clear_button/CustomButton";
 import NodeComponent from "./components/node_component/NodeComponent";
 import { useState } from "react";
 import Canvas from "./components/canvas/canvas";
+import FormMenu from "./components/form_menu/FormMenu";
 
 const containerStyles: React.CSSProperties = {
   display: "flex",
@@ -39,10 +40,14 @@ export const App = () => {
 
   return (
     <div style={containerStyles}>
-      <Canvas
-      nodes_list={nodes}
-      addNodeItem={addNodeItem}
+      <FormMenu
+        setAddNodeItem={setAddNodeItem}
+        nodes={nodes}
+        setNodes={setNodes}
+        addNodeItem={() => addNodeItem}
       />
+
+      <Canvas nodes_list={nodes} addNodeItem={addNodeItem} />
 
       <CustomButton
         radius="8px"
@@ -50,14 +55,6 @@ export const App = () => {
         width="8vw"
         button_content="Clear"
         onClick={() => console.log("Clear screen button clicked")}
-      />
-
-      <CustomButton 
-      width="8vw"
-      height="8vh"
-      radius="20px"
-      button_content="FAB"
-      onClick={handleSubmit}      
       />
     </div>
   );
