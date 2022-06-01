@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ReactPropTypes, useState} from 'react';
 import { Box } from '../Box';
 
 const boxStyles: React.CSSProperties = {
@@ -7,11 +7,23 @@ const boxStyles: React.CSSProperties = {
     backgroundColor: '#f00',
 };
 
-class ShapeComponent extends React.Component{
+type Props = {
+    render_shape : string
+    shape_color : string
+}
 
-    render(){
+function ShapeComponent({render_shape, shape_color} : Props){
+
+   //Vars to manage shape properties
+    const [shape, setShape] = useState(render_shape);
+
+    const [color, setColor] = useState(shape_color);
+
+    return(
+        <div>
         return <Box style={boxStyles}/>
-    }
+        </div>
+    )
 }
 
 export default ShapeComponent;

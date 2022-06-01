@@ -3,6 +3,7 @@ import { Box } from "./components/Box";
 import CustomButton from "./components/clear_button/CustomButton";
 import NodeComponent from "./components/node_component/NodeComponent";
 import { useState } from "react";
+import Canvas from "./components/canvas/canvas";
 
 const containerStyles: React.CSSProperties = {
   display: "flex",
@@ -29,8 +30,6 @@ export const App = () => {
   //Function to toggle add node menu
   const handleSubmit = () => {
     setAddNodeItem(!addNodeItem);
-
-    console.log("Hello : " + addNodeItem);
   };
 
   //Function to add new node to list
@@ -40,9 +39,9 @@ export const App = () => {
 
   return (
     <div style={containerStyles}>
-      <NodeComponent
-        onClick={() => console.log("Node clicked!")}
-        onHold={() => console.log("Node pressed and held!")}
+      <Canvas
+      nodes_list={nodes}
+      addNodeItem={addNodeItem}
       />
 
       <CustomButton

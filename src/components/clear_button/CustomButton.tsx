@@ -1,12 +1,14 @@
 import React, { MouseEventHandler } from "react";
 
 interface Props {
-  onClick: () => void;
+  onClick: () => void | null;
   radius: string;
   height: string;
   width: string;
   button_content: string;
-  onHold?: MouseEventHandler<HTMLButtonElement>;
+  onHold?: MouseEventHandler<HTMLButtonElement> | null;
+
+  
 }
 
 const CustomButton: React.FC<Props> = ({
