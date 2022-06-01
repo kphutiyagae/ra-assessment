@@ -12,7 +12,9 @@ interface Props {
 }
 
 const NodeComponent: React.FC<Props> = ({ onClick, onHold, currentNode, nodes, addNodeItem }) => {
-  return (
+  console.log("CASA");
+
+  return (    
     <Draggable
       bounds="parent"
       defaultPosition={{ x: 0, y: 0 }}

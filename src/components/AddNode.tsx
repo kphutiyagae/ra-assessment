@@ -36,7 +36,9 @@ export default function AddNodeForm({
   return <>{
   
     <div className="addNodeform">
-    <form>
+    <form 
+    onSubmit={ (e) => handleSubmit(e) }
+    >
       <input
         type="text"
         placeholder="Node label"
@@ -45,7 +47,8 @@ export default function AddNodeForm({
 
       <label>
         Shape:
-        <select value={color} onChange={(e) => setShape(e.target.value)}>
+        <select value={shape} onChange={(e) => setShape(e.target.value)}>
+        <option value=""> </option>
           <option value="square">Square</option>
           <option value="circle">Circle</option>
           <option value="rectangle">Rectangle</option>
@@ -57,7 +60,9 @@ export default function AddNodeForm({
 
       <label>
         Color:
-        <select value={color} onChange={(e) => setColor(e.target.value)}>
+        <select value={color} onChange={(e) => setColor(e.target.value)}
+        >
+        <option value=""> </option>
           <option value="red">Red</option>
           <option value="blue">Blue</option>
           <option value="green">Green</option>
