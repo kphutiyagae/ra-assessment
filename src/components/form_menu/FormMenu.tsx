@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import AddNodeForm from "../AddNode";
 import { useSpring, animated, config } from "react-spring";
 import CustomButton from "../clear_button/CustomButton";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 export default function FormMenu( {setAddNodeItem, addNodeItem = false, nodes, setNodes} 
     : {
@@ -20,20 +22,23 @@ export default function FormMenu( {setAddNodeItem, addNodeItem = false, nodes, s
     to : {position : "absolute", opacity : 1, display : 'block'},
     enter : {opacity : 1},
     from : {opacity: 0, display : 'none'},
-    reverse : showMenu,
+    reverse : !showMenu,
     config : config.gentle
     });
 
     //setShowMenu(setAddNodeItem);
 
     return (
-    <div>
+    <div
+    className="w-3/4 bg-blue-"
+
+    >
       
-      <CustomButton 
+      <CustomButton
       width="8vw"
       height="8vh"
       radius="20px"
-      button_content="FAB"
+      button_content={<FontAwesomeIcon icon={faPlus}/>}
       onClick={ () =>{ setShowMenu(!showMenu); setAddNodeItem(!showMenu); }}
     />    
 

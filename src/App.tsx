@@ -54,7 +54,7 @@ export const App = () => {
         height="auto"
         width="8vw"
         button_content="Clear"
-        onClick={() => console.log("Clear screen button clicked")}
+        onClick={() => {setNodes([])}}
       />
     </div>
   );

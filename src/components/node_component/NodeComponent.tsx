@@ -12,7 +12,6 @@ interface Props {
 }
 
 const NodeComponent: React.FC<Props> = ({ onClick, onHold, currentNode, nodes, addNodeItem }) => {
-  console.log("CASA");
 
   return (    
     <Draggable
@@ -21,7 +20,7 @@ const NodeComponent: React.FC<Props> = ({ onClick, onHold, currentNode, nodes, a
       //onStart={onHold}
     >
       <div key= {currentNode.id}>
-        <LabelComponent width="3vw" height="auto" children={currentNode.labal} />
+        <LabelComponent width="3vw" height="auto" children={currentNode.label} />
         <ShapeComponent 
           render_shape={currentNode.shape}
           shape_color = {currentNode.color}

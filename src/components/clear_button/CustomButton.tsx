@@ -5,7 +5,7 @@ interface Props {
   radius: string;
   height: string;
   width: string;
-  button_content: string;
+  button_content: any;
   onHold?: MouseEventHandler<HTMLButtonElement> | null;
 
   
@@ -21,6 +21,7 @@ const CustomButton: React.FC<Props> = ({
 }) => {
   return (
     <button
+    className="bg-red-300 h-auto w-auto p-5 m-5"
       onClick={onClick}
       style={{
         borderRadius: radius,

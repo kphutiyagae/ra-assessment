@@ -7,10 +7,8 @@ interface Props {
 }
 
 const LabelComponent : React.FC<Props> = ({
-    children,
-    width,
-    height
-}) =>{
+    children }) =>{
+
     return (
         <h3>{children}</h3>
     )
