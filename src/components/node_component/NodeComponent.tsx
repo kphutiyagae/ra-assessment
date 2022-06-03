@@ -35,7 +35,7 @@ const NodeComponent: React.FC<Props> = ({
       //onStart={onHold}
     >
       <div
-      className="bg-red-400 w-auto"
+      className="w-auto"
         key={currentNode.id}>
         <LabelComponent
           width="3vw"

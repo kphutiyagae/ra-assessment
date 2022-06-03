@@ -69,7 +69,7 @@ export const App = () => {
             setCurrNode={setNode}
           />
         </div>
-        <div className="row-span-1 col-span-1 outline outline-green-300">
+        <div className="row-span-1 col-span-1 bg-blue-100">
           <FormMenu
             setAddNodeItem={setAddNodeItem}
             nodes={nodes}
@@ -78,8 +78,8 @@ export const App = () => {
           />
         </div>
 
-        <div className="row-span-1 col-span-1 outline outline-purple-700">
-          <div className="mb-0">
+        <div className="row-span-1 col-span-1 bg-blue-100">
+          <div className="mt-24 ml-48">
             <CustomButton
               radius="8px"
               height="auto"
