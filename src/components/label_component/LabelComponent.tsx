@@ -7,10 +7,12 @@ interface Props {
 }
 
 const LabelComponent : React.FC<Props> = ({
-    children }) =>{
+    children}) =>{
 
     return (
+        <div className='outline outline-3 rounded-md outline-blue-500 w-auto h-auto'>
         <h3>{children}</h3>
+        </div>
     )
 }
 

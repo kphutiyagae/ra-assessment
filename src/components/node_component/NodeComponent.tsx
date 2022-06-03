@@ -6,25 +6,48 @@ import Draggable from "react-draggable";
 interface Props {
   onClick: () => any;
   onHold: () => any;
-  currentNode : any;
-  nodes : any;
-  addNodeItem : any;
+  currentNode: any;
+  nodes: any;
+  addNodeItem: any;
+  editNodeIt: any;
+  setEditNodeIt : any;
+  currNodeVar : any;
+  setCurrNode : any;
+  editFunct : any;
 }
 
-const NodeComponent: React.FC<Props> = ({ onClick, onHold, currentNode, nodes, addNodeItem }) => {
+const NodeComponent: React.FC<Props> = ({
+  onClick,
+  onHold,
+  currentNode,
+  nodes,
+  addNodeItem,
+  editNodeIt,
+  setEditNodeIt,
+  currNodeVar,
+  setCurrNode,
+  editFunct
+}) => {
 
-  return (    
+  return (
     <Draggable
-      bounds="parent"
       defaultPosition={{ x: 0, y: 0 }}
       //onStart={onHold}
     >
-      <div key= {currentNode.id}>
-        <LabelComponent width="3vw" height="auto" children={currentNode.label} />
-        <ShapeComponent 
-          render_shape={currentNode.shape}
-          shape_color = {currentNode.color}
+      <div
+      className="bg-red-400 w-auto"
+        key={currentNode.id}>
+        <LabelComponent
+          width="3vw"
+          height="auto"
+          children={currentNode.label}
         />
+        <ShapeComponent
+          render_shape={currentNode.shape}
+          shape_color={currentNode.color}
+          shape_scale={currentNode.scale}
+        />
+
       </div>
     </Draggable>
   );
